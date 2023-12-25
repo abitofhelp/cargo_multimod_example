@@ -1,0 +1,31 @@
+[package]
+authors.workspace = true
+description.workspace = true
+edition.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+license-file.workspace = true
+name = "greeter_server"
+readme.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+version = "1.0.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]] # Bin to run the HelloWorld gRPC client
+name = "greeter_server"
+path = "src/main.rs"
+bench = false
+
+[dependencies]
+# Only necessary if using Protobuf well-known types.
+bytes = "1.5.0"
+helloworld = { version = "1.0.0", path = "../proto/helloworld" }
+prost = { version = "0.12.3", features = ["prost-derive"] }
+prost-types = { version = "0.12.3"}
+tokio = { version = "1.35.1", features = ["rt-multi-thread", "macros"] }
+tonic = { version = "0.10.2", features = ["gzip", "tls"] }
+
+[build-dependencies]
+tonic-build = { version = "0.10.2", features = ["prost"] }

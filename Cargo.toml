@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/client",
+    "crates/server",
+    "crates/proto/helloworld",
+]
+
+[workspace.package]
+authors = ["Michael Gardner <mjgardner@abitofhelp.com>"]
+description = "This is an example application demostrating how to use Prost and Tonic using multiple modules."
+edition = "2021"
+homepage = "https://www.abitofhelp.com"
+keywords = ["grpc", "prost", "protobuf", "rust", "tonic"]
+license-file = "LICENSE"
+readme = "README.md"
+repository = "https://github.com/abitofhelp/cargo_multimod_example.git"
+rust-version = "1.76"
